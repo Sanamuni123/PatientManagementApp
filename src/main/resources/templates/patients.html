@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Patients</title></head>
+<body>
+<h2>All Registered Patients</h2>
+
+<style>
+        body {
+            background-color: #e6f2ff; /* Light Blue */
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #000;
+        }
+        a {
+            color: blue;
+        }
+    </style>
+<table border="1">
+    <tr><th>Patient ID</th><th>First Name</th></tr>
+    <tr th:each="p : ${patients}">
+        <td th:text="${p.id}"></td>
+        <td th:text="${p.firstName}"></td>
+    </tr>
+</table>
+</body>
+</html>

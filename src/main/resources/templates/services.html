@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Services</title></head>
+<body>
+<h2>All Available Services</h2>
+
+<style>
+        body {
+            background-color: #e6f2ff; /* Light Blue */
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #000;
+        }
+        a {
+            color: blue;
+        }
+    </style>
+<table border="1">
+    <tr><th>Service ID</th><th>Name</th><th>Charges</th></tr>
+    <tr th:each="s : ${services}">
+        <td th:text="${s.id}"></td>
+        <td th:text="${s.serviceName}"></td>
+        <td th:text="${s.fees}"></td>
+    </tr>
+</table>
+</body>
+</html>
